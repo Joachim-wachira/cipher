@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url(articlebackground.jpg) center/cover no-repeat;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .navbar .logo {
+            width: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+            transform: scale(1.1);
+        }
+
+        /* Responsive styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 15px;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 100px auto 0;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            grid-column: 1 / -1;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 10px;
+            border-left: 2px solid #4a90e2;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #18d447;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="index.html">
+            <img src="logo.jpg" alt="Logo" class="logo">
+        </a>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+            <a href="about-us.html"><i class="fas fa-users"></i> ABOUT US</a>
+            <a href="projects.html"><i class="fas fa-tasks"></i> PROJECTS</a>
+            <a href="article.html"><i class="fas fa-newspaper"></i> ARTICLE</a>
+            <a href="contact_us.html"><i class="fas fa-briefcase"></i> CONTACT US</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1><i class="fas fa-lightbulb"></i> Transforming Ideas Into Technological Triumph</h1>
+
+        <!-- Contact Column -->
+        <div class="column contact-column">
+            <section>
+                <h2><i class="fas fa-address-card contact-icon"></i> CONTACT US</h2>
+                <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div>
+                        <p>EMAIL</p>
+                        <p class="subtext">contact@cipher.org</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <div>
+                        <p>+254 712 346 678</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <div>
+                        <p>BUSINESS WHATSAPP</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-telegram contact-icon"></i>
+                    <div>
+                        <p>TELEGRAM</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fab fa-facebook contact-icon"></i>
+                    <div>
+                        <p>FACEBOOK</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright">
+        <p>&copy; 2025. ALL RIGHTS RESERVED. CIPHER.ORG</p>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(homepage.jpg);
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            animation: slideDown 1s ease-out;
+        }
+
+        .navbar .logo {
+            width: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+            transform: scale(1.1);
+        }
+
+    /* Hamburger menu styling */
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        position: absolute; 
+        left: 15px; 
+        top: 15px; 
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+        /* Responsive styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 15px;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* Main content styling */
+        .main-content {
+            margin-top: 100px;
+        }
+
+        .main-content h1 {
+            font-size: 64px;
+            margin: 10px 0;
+        }
+
+        .main-content h2 {
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .buttons a:hover {
+            background-color: #00bcd4;
+            transform: scale(1.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">
+            <img src="logo.jpg" alt="Logo" class="logo">
+        </a>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+            <a href="about-us.html"><i class="fas fa-users"></i> ABOUT US</a>
+            <a href="projects.html"><i class="fas fa-tasks"></i> PROJECTS</a>
+            <a href="article.html"><i class="fas fa-newspaper"></i> ARTICLE</a>
+            <a href="contact_us.html"><i class="fas fa-briefcase"></i> CONTACT US</a>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <h1>CIPHER</h1>
+        <h2>CONNECT</h2>
+        <div class="buttons">
+            <a href="#">CIPHER.ORG</a>
+            <a href="#">SOCIALS</a>
+            <a href="#">HISTORY</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

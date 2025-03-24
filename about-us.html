@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                        url(background.mp4) center/cover no-repeat;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            width: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            color: #00bcd4;
+            transform: scale(1.1);
+        }
+        
+   /* Hamburger menu styling */
+   .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        position: absolute; 
+        left: 15px; 
+        top: 15px; 
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+
+        /* Responsive styling */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 15px;
+                background-color: rgba(0, 0, 0, 0.9);
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 100px auto 0;
+            padding: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            grid-column: 1 / -1;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style: none;
+            line-height: 2;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 8px 0;
+            padding: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            transform: translateX(10px);
+            color: #4a90e2;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        video#background-video {
+            position: fixed;
+            left: 0;
+            top: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="background.mp4" type="video/mp4"></video>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="index.html">
+            <img src="logo.jpg" alt="Logo" class="logo">
+        </a>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html"><i class="fas fa-home"></i> HOME</a>
+            <a href="about-us.html"><i class="fas fa-users"></i> ABOUT US</a>
+            <a href="projects.html"><i class="fas fa-tasks"></i> PROJECTS</a>
+            <a href="article.html"><i class="fas fa-newspaper"></i> ARTICLE</a>
+            <a href="contact_us.html"><i class="fas fa-briefcase"></i> CONTACT US</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>About Us</h1>
+
+        <!-- Column 1 -->
+        <div class="column">
+            <section>
+                <h2><i class="fas fa-lightbulb"></i> Our Vision</h2>
+                <p>We aim to transform ideas into technological triumphs, empowering communities and businesses worldwide.</p>
+            </section>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="column">
+            <section>
+                <h2><i class="fas fa-users"></i> Our Team</h2>
+                <p>Our team consists of passionate innovators, developers, and strategists dedicated to delivering excellence.</p>
+            </section>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="column">
+            <section>
+                <h2><i class="fas fa-briefcase"></i> Our Mission</h2>
+                <p>To provide cutting-edge solutions that drive progress and create lasting impact in the digital world.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright">
+        <p>&copy; 2025. ALL RIGHTS RESERVED.</p>
+    </div>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
